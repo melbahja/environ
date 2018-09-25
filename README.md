@@ -12,7 +12,7 @@ composer require melbahja/environ 1.0.0
 
 ## NOTE:
 
-Environ has no effect to the php runtime ini configuration, environ only takes env variables form ini file and load them 
+Environ has no effect to the php runtime ini configuration, environ only takes env variables from ini file and load them 
 
 ## Usage :
 
@@ -61,13 +61,13 @@ var_dump(Environ::get('DATABASE')); // array
 ```php
 Environ::load(string $directory): bool
 ```
-```
+```php
 Environ::get(string $var, $default = null): mixed
 ```
-```
+```php
 Environ::set(string $var, $value): bool
 ```
-```
+```php
 # Example: Environ::is('apache') 
 Environ::is(string $sapi): bool
 ```

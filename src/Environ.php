@@ -57,13 +57,14 @@ class Environ implements EnvironInterface
 	 */
 	public static function set(string $k, $v): bool
 	{
-		if (is_array($v)) {
+		$_ENV[$k] = $v;
+
+		if (is_string($v)) {
 			
-			$_ENV[$k] = $v;
-			return true;
+			return putenv("{$k}={$v}");
 		}
 
-		return putenv("{$k}={$v}");
+		return true;
 	}
 
 	/**

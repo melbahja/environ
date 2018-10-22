@@ -7,7 +7,7 @@ PHP environment loader with the power of the ini syntax and array support
 ## Installation :
 
 ```bash
-composer require melbahja/environ 1.0.0
+composer require melbahja/environ
 ```
 
 ## NOTE:
@@ -44,6 +44,8 @@ var_dump(Environ::get('APP_MODE')); // string
 
 var_dump(Environ::get('DATABASE')); // array
 
+var_dump($_ENV['DATABASE']); // array
+
 ```
 
 ## Helper
@@ -68,7 +70,7 @@ Environ::get(string $var, $default = null): mixed
 Environ::set(string $var, $value): bool
 ```
 ```php
-# Example: Environ::is('apache') 
+# Example: Environ::is('apache'), Environ::is('cli')
 Environ::is(string $sapi): bool
 ```
 

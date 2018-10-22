@@ -29,8 +29,13 @@ class SemverTest extends TestCase
 		$this->assertArrayHasKey('API_KEY', $arrayVar);
 		$this->assertSame($arrayVar['API_KEY'], 'appkey');
 
+		$this->assertSame($_ENV['API_NAME']['API_KEY'], 'appkey');
+
 		$this->assertArrayHasKey('svn', Environ::get('urls'));
 		$this->assertArrayHasKey('git', Environ::get('urls'));
+		
+		$this->assertArrayHasKey('git', $_ENV['urls']);
+		$this->assertArrayHasKey('git', $_ENV['urls']);
 	}
 
 

@@ -12,7 +12,7 @@ composer require melbahja/environ
 
 ## Why?
 
-Some env libraries load variables into `$_SERVER` and `$_REQUEST`, which is a stupid idea that can lead expose credentials and insert sensitive information into log files. `environ` only load variables to superglobal `$_ENV` and runtime `putenv`.
+Some env libraries load variables into `$_SERVER` and `$_REQUEST`, which is a stupid idea that can lead to expose credentials and insert sensitive information into log files. `environ` only load variables to superglobal `$_ENV` and runtime `putenv`.
 
 
 ## Usage :

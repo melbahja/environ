@@ -33,7 +33,7 @@ class SemverTest extends TestCase
 
 		$this->assertArrayHasKey('svn', Environ::get('urls'));
 		$this->assertArrayHasKey('git', Environ::get('urls'));
-		
+
 		$this->assertArrayHasKey('git', $_ENV['urls']);
 		$this->assertArrayHasKey('git', $_ENV['urls']);
 	}
@@ -61,6 +61,8 @@ class SemverTest extends TestCase
 		$this->assertSame(Environ::get('TRUE_VAR'), '1');
 
 		$this->assertSame(Environ::get('FALSE_VAR'), '');
+
+		$this->assertSame(Environ::get('FALSY'), '0');
 	}
 
 

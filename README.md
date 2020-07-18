@@ -50,6 +50,9 @@ var_dump($_ENV['DATABASE']); // array
 
 ```
 
+### Note:
+Arrays will not be available in `getenv()`, you can only access them via `$_ENV` or `Environ::get()`.
+
 ## Helper
 
 ```php

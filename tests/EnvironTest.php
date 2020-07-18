@@ -57,12 +57,22 @@ class SemverTest extends TestCase
 
 
 		$this->assertSame(Environ::get('NULL_VAR'), '');
+		$this->assertSame(Environ::get('NULL_VAR'), getenv('NULL_VAR'));
 
 		$this->assertSame(Environ::get('TRUE_VAR'), '1');
+		$this->assertSame(Environ::get('TRUE_VAR'), getenv('TRUE_VAR'));
 
 		$this->assertSame(Environ::get('FALSE_VAR'), '');
+		$this->assertSame(Environ::get('FALSE_VAR'), getenv('FALSE_VAR'));
+
+
+		$this->assertSame(Environ::get('STR_VAR'), 'hello');
+		$this->assertSame(Environ::get('STR_VAR'), getenv('STR_VAR'));
+
 
 		$this->assertSame(Environ::get('FALSY'), '0');
+		$this->assertSame(Environ::get('FALSY'), getenv('FALSY'));
+
 	}
 
 
@@ -71,6 +81,15 @@ class SemverTest extends TestCase
 		$isEnvFound = Environ::load(__DIR__ . DIRECTORY_SEPARATOR . 'directory');
 
 		$this->assertNull(Environ::get('key_is_not_existed'));
+
+		$this->assertFalse(getenv('key_is_not_existed'));
+	}
+
+
+	public function testGetDefaultValue()
+	{
+		$this->assertFalse(Environ::get('key_is_not_existed', getenv('key_is_not_existed')));
+		$this->assertTrue(Environ::get('key_is_not_existed', true));
 	}
 
 

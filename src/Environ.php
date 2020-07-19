@@ -7,7 +7,8 @@ class Environ implements EnvironInterface
 {
 
 	/**
-	 * Load env file from directory
+	 * Load env file from a directory.
+	 *
 	 * @param  string $dir
 	 * @return bool
 	 */
@@ -32,25 +33,24 @@ class Environ implements EnvironInterface
 	}
 
 	/**
-	 * Get form env
+	 * Get env variable value.
+	 *
 	 * @param  string $k
 	 * @param  mixed $default
 	 * @return mixed
 	 */
 	public static function get(string $k, $default = null)
 	{
-		$val = $_ENV[$k] ?? getenv($k);
-
-		if ($val === false) {
-
-			return $default;
+		if (isset($_ENV[$k])) {
+			return $_ENV[$k];
 		}
 
-		return $val;
+		return getenv($k) ?: $default;
 	}
 
 	/**
-	 * Set env value 
+	 * Set env variable value.
+	 *
 	 * @param string $k
 	 * @param mixed $v
 	 * @return bool
@@ -58,18 +58,12 @@ class Environ implements EnvironInterface
 	public static function set(string $k, $v): bool
 	{
 		$_ENV[$k] = $v;
-
-		if (is_string($v)) {
-			
-			return putenv("{$k}={$v}");
-		}
-
-		return true;
+		return is_string($_ENV[$k]) ? putenv("{$k}={$v}") : true;
 	}
 
 	/**
-	 * Check server api type
-	 * ex: apache, cli, cgi
+	 * Check server api type (example: apache, cli, cgi).
+	 *
 	 * @param  string  $sapi
 	 * @return bool
 	 */

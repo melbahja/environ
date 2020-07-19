@@ -1,37 +1,37 @@
 {
 	"name": "melbahja/environ",
-    "type": "library",
-    "description": ".env PHP environment loader with the power of the ini syntax",
-    "keywords": [".env", "env variables", "php7", "env loader", "environment", "ini"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Mohamed ELbahja",
-            "email": "mohamed@elbahja.me",
-            "homepage": "https://elbahja.me",
-            "role": "Developer"
-        }
-    ],
+	"type": "library",
+	"description": "Load environment variables from .env file ONLY on $_ENV and runtime.",
+	"keywords": [".env", "env variables", "php7", "env loader", "environment", "ini"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Mohamed ELbahja",
+			"email": "mohamed@elbahja.me",
+			"homepage": "https://elbahja.me",
+			"role": "Developer"
+		}
+	],
 
-    "require": {
-        "php": ">=7.1"
-    },
+	"require": {
+		"php": ">=7.1"
+	},
 
 	"autoload":{
 		"psr-4": {
 			"Melbahja\\Environ\\": "src/"
 		}
-    },
+	},
 
-    "autoload-dev": {
-        "psr-4": {
+	"autoload-dev": {
+		"psr-4": {
 			"Melbahja\\Environ\\Tests\\": "tests/"
-        }
-    },
+		}
+	},
 
-    "require-dev": {
-        "phpunit/phpunit": "7.0"
-    },
+	"require-dev": {
+		"phpunit/phpunit": "^8.0 || ^7.0"
+	},
 
-    "minimum-stability":"dev"
+	"minimum-stability":"dev"
 }

@@ -1,0 +1,20 @@
+name: PHP Tests
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Validate
+      run: composer validate
+
+    - name: Install deps
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Run tests
+      run: ./vendor/bin/phpunit

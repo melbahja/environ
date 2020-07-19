@@ -1,8 +1,10 @@
-# Environ [![Build Status](https://img.shields.io/travis/melbahja/environ/master.svg)](https://travis-ci.org/melbahja/environ) ![PHP from Travis config](https://img.shields.io/travis/php-v/melbahja/environ.svg) [![Twitter](https://img.shields.io/twitter/url/https/github.com/melbahja/environ.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmelbahja%2Fenviron)
+# Environ 
 
 Load PHP environment variables from .env (INI syntax) file only on `$_ENV` and runtime.
 
 ![](environ.jpg?raw=true)
+[![Build Status](https://img.shields.io/travis/melbahja/environ/master.svg)](https://travis-ci.org/melbahja/environ)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/melbahja/environ.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmelbahja%2Fenviron)
 
 ## Installation :
 
